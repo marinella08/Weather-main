@@ -1,0 +1,173 @@
+body {
+    background-color: black;
+  }
+  
+  .main-container {
+    
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 3px solid #42a5f5;
+    border-radius: 10px;
+  }
+  .by-Pastukh {
+    position: relative;
+    max-width: 800px;
+    margin: 10px auto;
+    margin-top: 0%;
+  }
+  
+  .navbar {
+    position: relative;
+    left: 70%;
+  }
+  
+  .search-city {
+    border-radius: 1px solid;
+    border-color: #42a5f5;
+    border-radius: 5px;
+    border-width: 2px;
+    color: black;
+    font-weight: 700;
+    background-color: white;
+    width: 80%;
+  }
+
+  .search-btn {
+    border-radius: 1px solid;
+    border-color: #42a5f5;
+    border-radius: 5px;
+    border-width: 2px;
+    color: white;
+    background-color: #42a5f5;;
+  }
+
+  .search-btn:hover {
+    background: white;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 200ms ease;
+    }
+  
+  
+  h1 {
+    font-weight: 900;
+    font-size: 80px;
+    margin-top: 60px;
+    margin-bottom: 3rem;
+    color: white;
+  }
+  
+  h2 {
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 20px;
+  }
+  
+  .city {
+    position: relative;
+    left: 5%;
+    margin-top: -8%;
+    color: #42a5f5;
+  }
+  
+  h3 {
+    font-weight: 900;
+    font-size: 33px;
+    color: white;  
+  }
+  
+  .date {
+    position: relative;
+    left: 5%;
+    margin-top: -6%;
+    padding-top: 2%;
+    display: inline-block;
+   
+  }
+  
+  .time {
+    position: relative;
+    left: 5%;
+    margin-bottom: 10%;
+  }
+  
+  .temperature-city {
+    position: relative;
+    left: 5%;
+    margin-top: -8%;
+  }
+  
+  .pic-weather {
+    position: relative;
+    right: -42%;
+    margin-top: -30%;
+  }
+
+  .description {
+    text-transform: capitalize;
+    position: relative;
+    right: -49%;
+    
+    color: white;
+  }
+  
+  .table-wind {
+    width: 40%;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-color: #42a5f5;
+    position: relative;
+    left: 70%;
+    margin-top: -15%;
+  }
+  
+  .table {
+    border-color: #42a5f5;
+    border-style: solid;
+    color: white;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
+  
+  .bord {
+    position: relative;
+    top: 10px;
+    border: 1px solid;
+    border-color: #586072;
+    text-align: center;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    font-weight: 100;
+    margin-left: 10%;
+  }
+  
+  .days {
+    font-weight: 900;
+    font-size: 22px;
+    text-align: center;
+    color: #42a5f5;
+  }
+  
+  .prognose {
+    border-color: #586072;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+  
+  .img {
+    width: 90px;
+    height: auto;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .location {
+    background: blue;
+    color: white;
+  }
+  
