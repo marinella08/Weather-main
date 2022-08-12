@@ -1,4 +1,4 @@
-//Search city in world
+//Search city 
 
 function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=eadaf9d564268a9d29e613879a48803e`;
