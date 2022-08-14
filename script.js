@@ -146,13 +146,9 @@ function displayForecast(response) {
         `
       <div class="col-2">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-        <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="42"
-        />
+        
+        <img id="imgWeather" src="" alt="" width="42"/>
+
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
             forecastDay.temp.max
@@ -163,16 +159,131 @@ function displayForecast(response) {
         </div>
       </div>
   `;
+
+  
+  let iconDescription = forecastDay.data.weather[0].description;
+  let ImgElment = document.querySelector("#imgWeather");
+  ImgElment.innerHTML = `${iconDescription}`;
+
+  if (iconDescription === "clear sky") {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/168/original/01d.png?1656677804`
+    );
+  } else if (iconDescription === "few clouds") {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/169/original/02d.png?1656677813`
+    );
+  } else if (iconDescription === "scattered clouds") {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/170/original/03d.png?1656677822`
+    );
+  } else if (
+    iconDescription === "broken clouds" ||
+    iconDescription === "overcast clouds"
+  ) {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/171/original/04d.png?1656677838`
+    );
+  } else if (
+    iconDescription === "shower rain" ||
+    iconDescription === "light intensity drizzle" ||
+    iconDescription === "drizzle" ||
+    iconDescription === "heavy intensity drizzle" ||
+    iconDescription === "light intensity drizzle rain" ||
+    iconDescription === "drizzle rain" ||
+    iconDescription === "heavy intensity drizzle rain" ||
+    iconDescription === "shower rain and drizzle" ||
+    iconDescription === "heavy shower rain and drizzle" ||
+    iconDescription === "shower drizzle" ||
+    iconDescription === "heavy intensity shower rain" ||
+    "ragged shower rain"
+  ) {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/172/original/09d.png?1656677847`
+    );
+  } else if (
+    iconDescription === "rain" ||
+    iconDescription === "light rain    " ||
+    iconDescription === "moderate rain" ||
+    iconDescription === "heavy intensity rain" ||
+    iconDescription === "very heavy rain" ||
+    iconDescription === "extreme rain"
+  ) {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/173/original/10d.png?1656677854`
+    );
+  } else if (
+    iconDescription === "thunderstorm" ||
+    iconDescription === "thunderstorm with light rain" ||
+    iconDescription === "thunderstorm with rain" ||
+    iconDescription === "thunderstorm with heavy rain" ||
+    iconDescription === "light thunderstorm" ||
+    iconDescription === "heavy thunderstorm" ||
+    iconDescription === "ragged thunderstorm    " ||
+    iconDescription === "thunderstorm with light drizzle" ||
+    iconDescription === "thunderstorm with drizzle" ||
+    iconDescription === "thunderstorm with heavy drizzle"
+  ) {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/174/original/11d.png?1656677860`
+    );
+  } else if (
+    iconDescription === "snow" ||
+    iconDescription === "light snow" ||
+    iconDescription === "Snow" ||
+    iconDescription === "Heavy snow" ||
+    iconDescription === "Sleet" ||
+    iconDescription === "Light shower sleet" ||
+    iconDescription === "Shower sleet" ||
+    iconDescription === "freezing rain" ||
+    iconDescription === "Light rain and snow" ||
+    iconDescription === "Rain and snow" ||
+    iconDescription === "Light shower sleet" ||
+    iconDescription === "Shower snow" ||
+    iconDescription === "Heavy shower snow"
+  ) {
+    ImgElment.setAttribute(
+      "src",
+      ` https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/175/original/13d.png?1656677869`
+    );
+  } else if (
+    iconDescription === "mist" ||
+    iconDescription === "tornado" ||
+    iconDescription === "squalls" ||
+    iconDescription === "volcanic ash" ||
+    iconDescription === "dust" ||
+    iconDescription === "sand" ||
+    iconDescription === "fog" ||
+    iconDescription === "sand/ dust whirls" ||
+    iconDescription === "Haze" ||
+    iconDescription === "Smoke"
+  ) {
+    ImgElment.setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/316/original/50d.png?1656854718`
+    );
+  } else {
+    ImgElment.innerHTML = null;
+  }
     }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-// displayForecast();
+
+
 
 function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=eadaf9d564268a9d29e613879a48803e`;
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 

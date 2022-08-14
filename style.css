@@ -5,7 +5,7 @@ body {
   .main-container {
     max-width: 900px;
     margin: 10px auto;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     border: 3px solid #42a5f5;
     border-radius: 10px;
   }
@@ -169,4 +169,22 @@ body {
     background: blue;
     color: white;
   }
+  
+  .col-2 {
+    background-color: #42a5f5;
+    text-align: center ;
+    
+    
+    border-color: aquamarine;
+    position: relative;
+    
+    margin-top: 3%;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 0%;
+    height: 150px;
+
+  }
+
   
