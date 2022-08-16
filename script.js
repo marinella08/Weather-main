@@ -147,7 +147,7 @@ function displayForecast(response) {
       <div class="col-2">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         
-        <img id="imgWeather" src="" alt="" width="42"/>
+        <img class="imgWeather" src="" alt="" width="42"/>
 
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
@@ -161,22 +161,22 @@ function displayForecast(response) {
   `;
 
   
-  let iconDescription = forecastDay.data.weather[0].description;
-  let ImgElment = document.querySelector("#imgWeather");
+  let iconDescription = forecastDay.weather[0].description;
+  let ImgElmentArr = document.querySelectorAll(".imgWeather")
   ImgElment.innerHTML = `${iconDescription}`;
 
-  if (iconDescription === "clear sky") {
-    ImgElment.setAttribute(
+   if (iconDescription === "clear sky") {
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/168/original/01d.png?1656677804`
     );
   } else if (iconDescription === "few clouds") {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/169/original/02d.png?1656677813`
     );
   } else if (iconDescription === "scattered clouds") {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/170/original/03d.png?1656677822`
     );
@@ -184,7 +184,7 @@ function displayForecast(response) {
     iconDescription === "broken clouds" ||
     iconDescription === "overcast clouds"
   ) {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/171/original/04d.png?1656677838`
     );
@@ -202,7 +202,7 @@ function displayForecast(response) {
     iconDescription === "heavy intensity shower rain" ||
     "ragged shower rain"
   ) {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/172/original/09d.png?1656677847`
     );
@@ -214,7 +214,7 @@ function displayForecast(response) {
     iconDescription === "very heavy rain" ||
     iconDescription === "extreme rain"
   ) {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/173/original/10d.png?1656677854`
     );
@@ -230,7 +230,7 @@ function displayForecast(response) {
     iconDescription === "thunderstorm with drizzle" ||
     iconDescription === "thunderstorm with heavy drizzle"
   ) {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/174/original/11d.png?1656677860`
     );
@@ -249,7 +249,7 @@ function displayForecast(response) {
     iconDescription === "Shower snow" ||
     iconDescription === "Heavy shower snow"
   ) {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       ` https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/175/original/13d.png?1656677869`
     );
@@ -265,7 +265,7 @@ function displayForecast(response) {
     iconDescription === "Haze" ||
     iconDescription === "Smoke"
   ) {
-    ImgElment.setAttribute(
+    ImgElmentArr[index].setAttribute(
       "src",
       `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/316/original/50d.png?1656854718`
     );
