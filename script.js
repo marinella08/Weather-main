@@ -44,95 +44,6 @@ function showTemperature(response) {
   axios.get(apiUrl).then(showWeather);
 }
 
-//Current time
-function formatDate(date) {
-  let currentDate = document.querySelector("#date");
-  let currentTime = document.querySelector("#time");
-
-  let now = new Date();
-  let number = date.getDate();
-  if (number < 10) {
-    number = `0${number}`;
-  }
-
-  let day = now.getDay();
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-
-  let min = now.getMinutes();
-  if (min < 10) {
-    min = `0${min}`;
-  }
-
-  let year = date.getFullYear();
-  let month = now.getMonth();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wendnesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let Day = days[date.getDay()];
-
-  let months = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-  ];
-  let Month = months[date.getMonth()];
-
-  currentDate.innerHTML = `${number}/${Month}/${year}`;
-  currentTime.innerHTML = `${Day} ${hour}:${min}`;
-}
-
-console.log(formatDate(new Date()));
-
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
-}
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day];
-}
-
 
 
 function displayForecast(response) {
@@ -446,3 +357,110 @@ function showWeather(response) {
 
   getForecast(response.data.coord);
 }
+
+//Current time
+function formatDate(date) {
+  let currentDate = document.querySelector("#date");
+  let currentTime = document.querySelector("#time");
+
+  let now = new Date();
+  let number = date.getDate();
+  if (number < 10) {
+    number = `0${number}`;
+  }
+
+  let day = now.getDay();
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  let min = now.getMinutes();
+  if (min < 10) {
+    min = `0${min}`;
+  }
+
+  let year = date.getFullYear();
+  let month = now.getMonth();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wendnesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let Day = days[date.getDay()];
+
+  let months = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
+  let Month = months[date.getMonth()];
+
+  currentDate.innerHTML = `${number}/${Month}/${year}`;
+  currentTime.innerHTML = `${Day} ${hour}:${min}`;
+}
+
+console.log(formatDate(new Date()));
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+let currentDate = document.querySelector("#date");
+currentDate.innerHTML = formatDate(new Date());
